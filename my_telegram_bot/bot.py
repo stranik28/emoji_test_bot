@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, types
 import asyncio
 from main import predict
 
-API_TOKEN = '1711154445:AAFtvTCVtvNY21MfutTGvvEgwNun-lZHYSw'  # Замените на свой API токен
+API_TOKEN = '1711154445:AAFtvTCVtvNY21MfutTGvvEgwNun-lZHYSw'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -19,18 +19,19 @@ def convert_audio(audio_file):
 
 
 @dp.message()
-async def handle_audio_message(message: types.Message):
-    file_id = message.voice.file_id
+async def process_voice_message(message: types.Message):
+    if message.voice:
+        file_id = message.voice.file_id
+    else:
+        file_id = message.document.file_id
     file = await bot.get_file(file_id)
     file_path = file.file_path
-    audio_filename = f"{file_id}.mp3"
+    audio_filename = f"{file_id}.wav"
     await bot.download_file(file_path, audio_filename)
 
-    wav_file = convert_audio(audio_filename)
-    emotion = await predict(wav_file)
+    emotion = await predict(audio_filename)
 
     os.remove(audio_filename)
-    os.remove(wav_file)
 
     await message.reply(f"Обнаружена эмоция в голосе: {emotion}")
 
@@ -41,4 +42,3 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
