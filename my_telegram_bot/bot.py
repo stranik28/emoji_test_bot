@@ -1,8 +1,9 @@
 import logging
 import os
+
+import requests
 from aiogram import Bot, Dispatcher, types
 import asyncio
-from main import predict
 
 API_TOKEN = '1711154445:AAFtvTCVtvNY21MfutTGvvEgwNun-lZHYSw'
 
@@ -10,12 +11,6 @@ logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
-
-
-def convert_audio(audio_file):
-    import subprocess
-    subprocess.call(['ffmpeg', '-i', f'{audio_file}', f'{audio_file[:-4]}.wav'])
-    return f'{audio_file[:-4]}.wav'
 
 
 @dp.message()
@@ -29,7 +24,7 @@ async def process_voice_message(message: types.Message):
     audio_filename = f"{file_id}.wav"
     await bot.download_file(file_path, audio_filename)
 
-    emotion = await predict(audio_filename)
+    emotion = await requests.post()
 
     os.remove(audio_filename)
 

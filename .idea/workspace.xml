@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1471989f-6193-4c58-ba11-c0142a723ac2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_telegram_bot/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/my_telegram_bot/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_telegram_bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_telegram_bot/bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_telegram_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +51,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/my_telegram_bot" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml.my_telegram_bot: Compose Deployment">
+  <component name="RunManager" selected="Docker.docker-compose.yaml.server: Compose Deployment">
     <configuration name="bot" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Emoji" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -87,7 +91,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_telegram_bot/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,8 +127,22 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yaml.server: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="server" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml.server: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.my_telegram_bot: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Python.bot" />
@@ -142,6 +160,7 @@
       <workItem from="1701634421305" duration="8280000" />
       <workItem from="1702245622806" duration="1530000" />
       <workItem from="1702248542065" duration="2155000" />
+      <workItem from="1702376629911" duration="5516000" />
     </task>
     <servers />
   </component>
