@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y ffmpeg
 
 # Установка зависимостей Python
 COPY req.txt /app/req.txt
+COPY bot.py /app/bot.py
 WORKDIR /app
 RUN pip install -r req.txt
 
