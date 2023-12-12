@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1471989f-6193-4c58-ba11-c0142a723ac2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_telegram_bot/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/my_telegram_bot/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_telegram_bot/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_telegram_bot/bot.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_telegram_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_telegram_bot/req.txt" beforeDir="false" afterPath="$PROJECT_DIR$/my_telegram_bot/req.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,6 +159,7 @@
       <workItem from="1702245622806" duration="1530000" />
       <workItem from="1702248542065" duration="2155000" />
       <workItem from="1702376629911" duration="5516000" />
+      <workItem from="1702403032965" duration="573000" />
     </task>
     <servers />
   </component>

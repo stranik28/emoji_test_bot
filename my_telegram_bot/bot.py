@@ -29,7 +29,7 @@ async def process_voice_message(message: types.Message):
     form.add_field('file', open(audio_filename, 'rb'), content_type='audio/x-wav')
 
     # URL, на который нужно отправить запрос
-    url = 'http://localhost:8000/predict'
+    url = 'http://server_emoji:8000/predict'
 
     # Отправка POST-запроса
     async with aiohttp.ClientSession() as session:
