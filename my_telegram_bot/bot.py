@@ -1,7 +1,7 @@
 import logging
 import os
 
-import requests
+import aiohttp
 from aiogram import Bot, Dispatcher, types
 import asyncio
 
@@ -24,11 +24,27 @@ async def process_voice_message(message: types.Message):
     audio_filename = f"{file_id}.wav"
     await bot.download_file(file_path, audio_filename)
 
-    emotion = await requests.post()
+    # Создайте объект FormData и добавьте туда файл
+    form = aiohttp.FormData()
+    form.add_field('file', open(audio_filename, 'rb'), content_type='audio/x-wav')
 
+    # URL, на который нужно отправить запрос
+    url = 'http://localhost:8000/predict'
+
+    # Отправка POST-запроса
+    async with aiohttp.ClientSession() as session:
+        async with session.post(url, data=form) as response:
+            # Проверяем успешность запроса
+            if response.status == 200:
+                # Получаем данные ответа
+                data = await response.json()
+                emotion = data.get('emotion', 'Не удалось определить эмоцию')
+                await message.reply(f"Обнаружена эмоция в голосе: {emotion}")
+            else:
+                await message.reply("Произошла ошибка при обработке аудио")
+
+    # Удаление локального файла
     os.remove(audio_filename)
-
-    await message.reply(f"Обнаружена эмоция в голосе: {emotion}")
 
 
 async def main():

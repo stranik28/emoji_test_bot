@@ -1,9 +1,9 @@
 version: '3'
 services:
-#  my_telegram_bot:
-#    build: ./my_telegram_bot  # Путь к папке с Dockerfile
-#    container_name: telegram_bot_emoji
-#    restart: on-failure
+  my_telegram_bot:
+    build: ./my_telegram_bot  # Путь к папке с Dockerfile
+    container_name: telegram_bot_emoji
+    restart: on-failure
   server:
     build: ./server
     container_name: server_emoji
